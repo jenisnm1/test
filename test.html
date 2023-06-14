@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let val = prompt("Enter the string");
+        if(isNaN(val)) {
+            val = val.toLowerCase();
+            for(let i=0;i<val.length;i++)
+            {
+                if(val.charAt(i)==='a'||val.charAt(i)==='e'||val.charAt(i)==='i'||val.charAt(i)==='o'||val.charAt(i)==='u')
+                {
+                    val = i;
+                    break;
+                }
+            }
+            document.write(`<h1>The index of vowel: ${val}</h1>`);
+        }
+        else {
+            let flag = false;
+            val1 = val;
+            val.charAt(0) === '-' ? flag = true : flag = false;
+            flag === true ? val = parseInt(val)*-1 : val = parseInt(val);
+            val = `${val}`;
+            val = val.split("").reverse().join("");
+            flag === true ? val = '-'+val : null;
+            document.write(`<h1>The entered number: ${val1}</h1>`);
+            document.write(`<h1>The reversed number: ${parseInt(val)/1}</h1>`);
+        }
+    </script>
+</body>
+</html>
